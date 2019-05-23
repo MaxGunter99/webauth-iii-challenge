@@ -29,7 +29,7 @@ class RegisterForm extends Component {
 
     submitDataHandler = event => {
         event.preventDefault();
-        this.props.register( this.state.userInfo ).then( () => this.props.history.push( "/" ))
+        this.props.register( this.state.userInfo ).then( () => this.props.history.push( "/login" ))
     };
 
     render() {
@@ -69,7 +69,7 @@ class RegisterForm extends Component {
                         placeholder = "Department"
                         onChange = { this.changeHandler }
                     />
-                    <button type='submit' className='actButton' >Register</button>
+                    <button type='submit' className='actButton'>Register</button>
                     <p>
                         Already have an account?
                         <br></br>

@@ -13,7 +13,7 @@ export const register = userInfo => dispatch => {
     return axios.post( 'http://localhost:4242/api/auth/register' , userInfo)
         .then( res => {
             dispatch({ type: REGISTER_SUCCESS , payload: res.data.token })
-            localStorage.setItem( 'token' , res.data.token );
+            localStorage.setItem( 'jwt' , res.data.token );
             console.log( res );
         })
         .catch( error => {
@@ -28,13 +28,12 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const login = userInfo => dispatch => {
     dispatch({ type: LOGIN })
-    return axios.post( 'http://localhost:4242/api/auth/login' , userInfo)
+    return axios.post( 'http://localhost:4242/api/auth/login' , userInfo )
         .then(res => {
             dispatch({ type: LOGIN_SUCCESS, payload: res.data.token })
-            localStorage.setItem('token', res.data.token);
-            localStorage.setItem('user_id', res.data.user_id);
+            localStorage.setItem('jwt', res.data.token);
         })
-        .catch(err => {
-            dispatch({ type: LOGIN_FAILURE, payload: err.message })
+        .catch(error => {
+            dispatch({ type: LOGIN_FAILURE, payload: error.message })
         })
 }

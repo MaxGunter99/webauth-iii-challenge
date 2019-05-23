@@ -28,7 +28,7 @@ class LoginForm extends Component {
 
     submitDataHandler = event => {
         event.preventDefault();
-        this.props.login(this.state.userInfo).then(() => this.props.history.push("/"))
+        this.props.login(this.state.userInfo).then(() => this.props.history.push("/users"))
     };
 
     render() {
@@ -62,7 +62,7 @@ class LoginForm extends Component {
                     <p>
                         Sign in below to access your dashboard. Don't have an account yet?
                         <br></br>
-                        <Link to="/register">Create one here.</Link>
+                        <Link to="/">Create one here.</Link>
                     </p>
                 </form>
                 <div />

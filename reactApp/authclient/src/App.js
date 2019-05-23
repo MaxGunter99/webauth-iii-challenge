@@ -2,24 +2,34 @@
 //IMPORTS
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router , Route , NavLink } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 import register from './components/register';
 import login from './components/login';
+import Users from './components/users';
 
+function App(props) {
+  const logout = () => {
+    localStorage.removeItem("jwt");
+    props.history.push("/login");
+  };
 
-
-function App() {
-  return (
-    <div className = 'links' >
-        <nav>
-            <NavLink exact to = '/'> Home </NavLink>
-            <NavLink exact to = '/register'> Register </NavLink>
-            <NavLink exact to = '/login'> Login </NavLink>
-        </nav>
-      <Route exact path = '/register' component = { register }/>
-      <Route exact path = '/login' component = { login }/>
+  return(
+    <div className='links' >
+      <nav>
+          <NavLink exact to='/'> Register </NavLink>
+        &nbsp;|&nbsp;
+          <NavLink exact to='/login'> Login </NavLink>
+        &nbsp;|&nbsp;
+          <NavLink exact to='/users'> Users </NavLink>
+        &nbsp;|&nbsp;
+          <NavLink onClick={logout} className = 'logout' to ='/login' >Logout</NavLink>
+      </nav>
+      <Route exact path='/' component={register} />
+      <Route exact path='/login' component={login} />
+      <Route path='/users' component={Users} />
     </div>
   );
+
 }
 
-export default App;
+export default withRouter(App);

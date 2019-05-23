@@ -6,11 +6,12 @@ import {
     REGISTER_FAILURE,
     LOGIN,
     LOGIN_SUCCESS,
-    LOGIN_FAILURE
+    LOGIN_FAILURE,
 } from '../actions/index';
 
 //DEFAULT STATE
 const initialState = {
+    users: [],
     registering: false,
     registered: false,
     loggingIn: false,
