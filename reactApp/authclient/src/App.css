@@ -1,0 +1,97 @@
+#root {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+/* NAVIGATION BAR */
+
+nav {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+nav a:hover {
+  color: white;
+  background-color: black;
+  transition: .5s;
+}
+
+/* REGISTER */
+
+.form-wrap {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #5a5e66;
+}
+.register {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+.register label {
+  margin: 10px;
+}
+.register input {
+  border-radius: 5px;
+  padding: 5px;
+}
+.register button {
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 1em;
+}
+.register button:hover {
+  color: white;
+  background-color: black;
+  transition: .5s;
+}
+.register p a {
+  color: red;
+}
+
+/* LOGIN */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+.login label {
+  margin: 10px;
+}
+.login button {
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 1em;
+}
+.login button:hover {
+  color: white;
+  background-color: black;
+  transition: .5s;
+}
+.login p a {
+  color: red;
+}

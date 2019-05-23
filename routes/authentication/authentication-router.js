@@ -27,7 +27,6 @@ router.post( '/register' , ( req , res ) => {
 //LOGIN ⬇︎
 router.post( '/login' , ( req , res ) => {
     let { username , password } = req.body;
-    // console.log( req.body );
     if ( req.body.username && req.body.password ) {
         Users.findBy({ username })
         .first()
@@ -35,7 +34,7 @@ router.post( '/login' , ( req , res ) => {
             console.log( user );
             if ( user && bcrypt.compareSync( password , user.password )) {
                 const token = generateToken( user );
-                console.log( token );
+                req.session.user = user;
                 res.status( 200 ).json({ message: `Welcome ${user.username} 👋🏼 You are in the ${user.department} department.` , token });
             } else {
                 res.status( 401 ).json({ message: 'Invalid credentials, please try again' });
@@ -48,6 +47,21 @@ router.post( '/login' , ( req , res ) => {
         res.status( 406 ).json({ message: 'Missing required field ( username or password ).' })
     }
 });
+
+//LOGOUT
+router.get( '/logout' , ( req , res ) => {
+    if ( req.session ) {
+      req.session.destroy( error => {
+        if ( error ) {
+          res.send( 'you can checkout at anytime you like, but you can never leave...' )
+        } else {
+          res.send( 'Peace out' )
+        }
+      })
+    } else {
+      res.end();
+    }
+  })
 
 //GENERATING USERS TOKEN ⬇︎
 function generateToken( user ) {
