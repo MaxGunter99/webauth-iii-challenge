@@ -1,0 +1,154 @@
+#root {
+  background-color: #d3d3d3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+h1 {
+  color: black;
+}
+
+h2 {
+  color: black;
+}
+
+p {
+  color: black;
+  font-size: 20px;
+}
+
+label {
+  color: black;
+  font-size: 20px;
+}
+
+input {
+  width: 200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.notAccepted {
+  border: 1px solid red;
+  width: 500px;
+  background-color: white;
+  color: red;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* NAVIGATION BAR */
+
+nav {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+nav a:hover {
+  color: black;
+  background-color: white;
+  transition: .5s;
+}
+
+.logout:hover{
+  background-color: red;
+}
+
+/* REGISTER */
+
+.form-wrap {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #ffffff;
+  width: 30%;
+  margin: 0 auto
+}
+.register {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+.register label {
+  margin: 10px;
+}
+.register input {
+  padding: 5px;
+}
+.register button {
+  width: 50%;
+  padding: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 30px;
+  font-size: 1em;
+}
+.register button:hover {
+  color: white;
+  background-color: rgb(168, 167, 167);
+  transition: .5s;
+}
+.register p a {
+  color: red;
+}
+
+/* LOGIN */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+.login label {
+  margin: 10px;
+}
+.login button {
+  width: 50%;
+  padding: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 30px;
+  font-size: 1em;
+}
+.login button:hover {
+  color: white;
+  background-color: rgb(168, 167, 167);
+  transition: .5s;
+}
+.login p a {
+  color: red;
+}
+
+/* LIST */
+ul {
+  border: 1px solid white;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+}
+
+ul li {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
